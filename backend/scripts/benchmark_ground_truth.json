@@ -1,0 +1,53 @@
+[
+  {
+    "query": "What database decisions did we make?",
+    "project": "Project Alpha",
+    "expected_matches": [
+      "PostgreSQL selected over MongoDB",
+      "pgvector required",
+      "ACID compliance cited"
+    ]
+  },
+  {
+    "query": "What authentication constraints exist?",
+    "project": "Project Alpha",
+    "expected_matches": [
+      "Short-lived JWT access tokens",
+      "Redis-backed refresh sessions"
+    ]
+  },
+  {
+    "query": "What are our infrastructure limitations?",
+    "project": "Cognitive-X",
+    "expected_matches": [
+      "Must be containerized",
+      "Docker Desktop required",
+      "Avoid native build tools"
+    ]
+  },
+  {
+    "query": "How are we handling agent communication?",
+    "project": "Project Alpha",
+    "expected_matches": [
+      "Model Context Protocol",
+      "Cursor Integration",
+      "Asynchronous context injection"
+    ]
+  },
+  {
+    "query": "What deployment risks were identified?",
+    "project": "Cognitive-X",
+    "expected_matches": [
+      "Windows native compilation failures",
+      "Redis latency over network"
+    ]
+  },
+  {
+    "query": "How is the filtering engine designed?",
+    "project": "Cognitive-X",
+    "expected_matches": [
+      "Reciprocal Rank Fusion",
+      "Confidence thresholding"
+    ]
+  }
+]

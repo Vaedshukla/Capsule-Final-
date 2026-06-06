@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Background -->
+  <rect width="128" height="128" rx="24" fill="#4f46e5"/>
+  <!-- Capsule shape -->
+  <rect x="34" y="44" width="60" height="40" rx="12" fill="white" opacity="0.15"/>
+  <rect x="34" y="44" width="60" height="40" rx="12" fill="none" stroke="white" stroke-width="4"/>
+  <!-- Letter C -->
+  <text x="64" y="75" font-family="system-ui, sans-serif" font-size="32" font-weight="700"
+        fill="white" text-anchor="middle" dominant-baseline="middle">C</text>
+</svg>

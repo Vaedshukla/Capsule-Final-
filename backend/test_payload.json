@@ -1,0 +1,18 @@
+{
+  "source": "chatgpt",
+  "project_hint": "MVP Test Project",
+  "url": "https://chatgpt.com/test",
+  "title": "Database Choice",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Should we use PostgreSQL or MongoDB?",
+      "position": 1
+    },
+    {
+      "role": "assistant",
+      "content": "PostgreSQL is preferred because ACID compliance is required.",
+      "position": 2
+    }
+  ]
+}

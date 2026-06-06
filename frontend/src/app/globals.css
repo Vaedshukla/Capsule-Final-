@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+:root {
+  --accent: 99 102 241; /* indigo-500 */
+}
+
+body {
+  @apply antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { @apply bg-gray-900; }
+::-webkit-scrollbar-thumb { @apply bg-gray-700 rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-gray-600; }

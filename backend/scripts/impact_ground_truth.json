@@ -1,0 +1,235 @@
+[
+  {
+    "project_id": "83f64014-d0ad-4cdf-934c-be110c4e8c70",
+    "category": "Architecture decisions",
+    "query": "Why did we choose PostgreSQL?",
+    "expected": [
+      "ACID compliance",
+      "pgvector",
+      "PostgreSQL selected over MongoDB"
+    ]
+  },
+  {
+    "project_id": "83f64014-d0ad-4cdf-934c-be110c4e8c70",
+    "category": "Rejected alternatives",
+    "query": "What database alternatives were rejected and why?",
+    "expected": [
+      "rejected Neo4j",
+      "operational overhead",
+      "pgvector is sufficient"
+    ]
+  },
+  {
+    "project_id": "83f64014-d0ad-4cdf-934c-be110c4e8c70",
+    "category": "Authentication",
+    "query": "What authentication risks were identified?",
+    "expected": [
+      "token hijacking",
+      "short-lived JWT access tokens",
+      "HttpOnly cookies",
+      "XSS attacks"
+    ]
+  },
+  {
+    "project_id": "ba39e94f-f7cc-4d93-88c3-3087aefc9efc",
+    "category": "Deployment",
+    "query": "What deployment constraints exist?",
+    "expected": [
+      "Redis latency",
+      "same VPC as the application servers"
+    ]
+  },
+  {
+    "project_id": "ba39e94f-f7cc-4d93-88c3-3087aefc9efc",
+    "category": "Requirements",
+    "query": "What assumptions were made during planning regarding agent workloads?",
+    "expected": [
+      "100 concurrent agents",
+      "5 memory retrieval requests per minute"
+    ]
+  },
+  {
+    "project_id": "83f64014-d0ad-4cdf-934c-be110c4e8c70",
+    "category": "Timeline evolution",
+    "query": "How did our architecture roadmap evolve over time?",
+    "expected": [
+      "Next.js Dashboard for Phase 2",
+      "MCP Server was prioritized over the Dashboard",
+      "validate agent integration"
+    ]
+  },
+  {
+    "project_id": "ba39e94f-f7cc-4d93-88c3-3087aefc9efc",
+    "category": "Infrastructure",
+    "query": "What infrastructure tools are we using?",
+    "expected": [
+      "containerized using Docker Desktop",
+      "Avoid native build tools on Windows"
+    ]
+  },
+  {
+    "project_id": "83f64014-d0ad-4cdf-934c-be110c4e8c70",
+    "category": "Historical tradeoffs",
+    "query": "What was the tradeoff between local vs cloud embeddings?",
+    "expected": [
+      "OpenAI gives higher dimensionality",
+      "costs money and adds latency",
+      "chose all-MiniLM-L6-v2",
+      "zero-cost local inference"
+    ]
+  },
+  {
+    "project_id": "ba39e94f-f7cc-4d93-88c3-3087aefc9efc",
+    "category": "Architecture decisions",
+    "query": "How is the filtering engine designed?",
+    "expected": [
+      "Reciprocal Rank Fusion",
+      "blend BM25 and vector scores",
+      "Confidence thresholding"
+    ]
+  },
+  {
+    "project_id": "83f64014-d0ad-4cdf-934c-be110c4e8c70",
+    "category": "Requirements",
+    "query": "What are the requirements for agent communication?",
+    "expected": [
+      "Model Context Protocol over stdio",
+      "Asynchronous context injection"
+    ]
+  },
+  {
+    "project_id": "ba39e94f-f7cc-4d93-88c3-3087aefc9efc",
+    "category": "Generated",
+    "query": "What was decided in discussion 11?",
+    "expected": [
+      "feature X_11",
+      "constraint Y_11"
+    ]
+  },
+  {
+    "project_id": "83f64014-d0ad-4cdf-934c-be110c4e8c70",
+    "category": "Generated",
+    "query": "What was decided in discussion 12?",
+    "expected": [
+      "feature X_12",
+      "constraint Y_12"
+    ]
+  },
+  {
+    "project_id": "ba39e94f-f7cc-4d93-88c3-3087aefc9efc",
+    "category": "Generated",
+    "query": "What was decided in discussion 13?",
+    "expected": [
+      "feature X_13",
+      "constraint Y_13"
+    ]
+  },
+  {
+    "project_id": "83f64014-d0ad-4cdf-934c-be110c4e8c70",
+    "category": "Generated",
+    "query": "What was decided in discussion 14?",
+    "expected": [
+      "feature X_14",
+      "constraint Y_14"
+    ]
+  },
+  {
+    "project_id": "ba39e94f-f7cc-4d93-88c3-3087aefc9efc",
+    "category": "Generated",
+    "query": "What was decided in discussion 15?",
+    "expected": [
+      "feature X_15",
+      "constraint Y_15"
+    ]
+  },
+  {
+    "project_id": "83f64014-d0ad-4cdf-934c-be110c4e8c70",
+    "category": "Generated",
+    "query": "What was decided in discussion 16?",
+    "expected": [
+      "feature X_16",
+      "constraint Y_16"
+    ]
+  },
+  {
+    "project_id": "ba39e94f-f7cc-4d93-88c3-3087aefc9efc",
+    "category": "Generated",
+    "query": "What was decided in discussion 17?",
+    "expected": [
+      "feature X_17",
+      "constraint Y_17"
+    ]
+  },
+  {
+    "project_id": "83f64014-d0ad-4cdf-934c-be110c4e8c70",
+    "category": "Generated",
+    "query": "What was decided in discussion 18?",
+    "expected": [
+      "feature X_18",
+      "constraint Y_18"
+    ]
+  },
+  {
+    "project_id": "ba39e94f-f7cc-4d93-88c3-3087aefc9efc",
+    "category": "Generated",
+    "query": "What was decided in discussion 19?",
+    "expected": [
+      "feature X_19",
+      "constraint Y_19"
+    ]
+  },
+  {
+    "project_id": "83f64014-d0ad-4cdf-934c-be110c4e8c70",
+    "category": "Generated",
+    "query": "What was decided in discussion 20?",
+    "expected": [
+      "feature X_20",
+      "constraint Y_20"
+    ]
+  },
+  {
+    "project_id": "ba39e94f-f7cc-4d93-88c3-3087aefc9efc",
+    "category": "Generated",
+    "query": "What was decided in discussion 21?",
+    "expected": [
+      "feature X_21",
+      "constraint Y_21"
+    ]
+  },
+  {
+    "project_id": "83f64014-d0ad-4cdf-934c-be110c4e8c70",
+    "category": "Generated",
+    "query": "What was decided in discussion 22?",
+    "expected": [
+      "feature X_22",
+      "constraint Y_22"
+    ]
+  },
+  {
+    "project_id": "ba39e94f-f7cc-4d93-88c3-3087aefc9efc",
+    "category": "Generated",
+    "query": "What was decided in discussion 23?",
+    "expected": [
+      "feature X_23",
+      "constraint Y_23"
+    ]
+  },
+  {
+    "project_id": "83f64014-d0ad-4cdf-934c-be110c4e8c70",
+    "category": "Generated",
+    "query": "What was decided in discussion 24?",
+    "expected": [
+      "feature X_24",
+      "constraint Y_24"
+    ]
+  },
+  {
+    "project_id": "ba39e94f-f7cc-4d93-88c3-3087aefc9efc",
+    "category": "Generated",
+    "query": "What was decided in discussion 25?",
+    "expected": [
+      "feature X_25",
+      "constraint Y_25"
+    ]
+  }
+]
