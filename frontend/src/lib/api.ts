@@ -15,8 +15,10 @@ export interface Capsule {
   summary: string;
   decisions: string | null;
   insights: string | null;
+  constraints: string | null;
+  risks: string | null;
+  action_items: string | null;
   importance_score: number;
-  access_count: number;
   created_at: string;
 }
 
@@ -63,6 +65,7 @@ export const capsuleApi = {
     return apiFetch<Capsule[]>(`/api/v1/capsules/${q}`);
   },
   getCapsule: (id: string) => apiFetch<Capsule>(`/api/v1/capsules/${id}`),
+  getConversation: (id: string) => apiFetch<any>(`/api/v1/conversations/${id}`),
   compressCapsule: (conversationId: string) =>
     apiFetch<Capsule>(`/api/v1/capsules/compress/${conversationId}`, { method: "POST" }),
 

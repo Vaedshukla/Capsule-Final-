@@ -234,41 +234,35 @@ Transcript:
             logger.error("llm_extraction_failed", error=str(e))
             # Fallback
             return CapsuleExtractionSchema(
-                summary="Failed to extract structured summary due to API error.",
+                summary=f"Failed to extract structured summary due to API error: {str(e)}",
             )
 
     def _build_summary(self, messages: list) -> str:
         """
-        Build a condensed summary from the conversation.
-        Phase 1A: Select top scored messages.
+        Build a structured markdown summary from the conversation.
+        Provides a much cleaner UI presentation.
         """
-        parts = []
+        parts = ["### Original Context\n"]
 
         # First user message = the task/question
         user_msgs = [m for m in messages if m.role == "user"]
         if user_msgs:
             first_user = user_msgs[0].content[:500]
-            parts.append(f"Task: {first_user}")
+            parts.append(f"> {first_user}...\n")
 
-        # Score assistant messages by length and keyword density
+        parts.append("### High-Level AI Response\n")
+        
+        # Grab first and last assistant messages to bound the summary
         assistant_msgs = [m for m in messages if m.role == "assistant"]
-        scored_msgs = []
-        for msg in assistant_msgs:
-            score = len(msg.content) / 1000.0
-            content_lower = msg.content.lower()
-            score += sum(1 for kw in DECISION_KEYWORDS if kw in content_lower)
-            score += sum(1 for kw in INSIGHT_KEYWORDS if kw in content_lower)
-            scored_msgs.append((score, msg))
+        if assistant_msgs:
+            first_ai = assistant_msgs[0].content[:400].strip()
+            parts.append(f"**Initial Response:**\n{first_ai}...\n")
+            
+            if len(assistant_msgs) > 1:
+                last_ai = assistant_msgs[-1].content[:400].strip()
+                parts.append(f"**Final Conclusion:**\n{last_ai}...")
 
-        scored_msgs.sort(key=lambda x: x[0], reverse=True)
-
-        # Include up to 3 highest scoring assistant messages
-        for score, msg in scored_msgs[:3]:
-            if score > 0.1:  # Must have some minimum value
-                snippet = msg.content[:600]
-                parts.append(f"AI: {snippet}...")
-
-        return "\n\n".join(parts)
+        return "\n".join(parts)
 
     def _extract_decisions(self, assistant_messages: list) -> list[str]:
         """Extract sentences containing decision keywords."""

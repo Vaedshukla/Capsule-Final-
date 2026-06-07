@@ -90,13 +90,18 @@ export default function App() {
 
       setStatus('Sending to Project Capsule backend...');
 
+      const messages = response.data.messages || [];
+      if (messages.length === 0) {
+        throw new Error(`Extraction failed. 0 messages retrieved from ${response.data.source}.`);
+      }
+
       // Dynamic payload from content script
       const payload = {
         source: response.data.source,
         project_hint: null,
         url: response.data.url,
         title: response.data.title,
-        messages: response.data.messages
+        messages: messages
       };
 
       const ingestRes = await fetch(`${backendUrl}/api/v1/ingest/conversation?project_id=${selectedProjectId}`, {

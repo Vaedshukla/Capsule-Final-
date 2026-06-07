@@ -92,6 +92,8 @@ class CapsuleOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
     id: uuid.UUID
+    project_id: Optional[uuid.UUID] = None
+    conversation_id: Optional[uuid.UUID] = None
     title: str
     summary: str
     decisions: Optional[List[str]] = None

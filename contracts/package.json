@@ -1,0 +1,14 @@
+{
+  "name": "capsule-contracts",
+  "version": "1.0.0",
+  "description": "Smart contracts for Project Capsule on Monad Testnet",
+  "main": "index.js",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "deploy": "npx hardhat run scripts/deploy.js --network monadTestnet"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.4"
+  }
+}

@@ -21,9 +21,9 @@ logger = structlog.get_logger()
     summary="Semantic search across memory capsules and messages",
 )
 async def semantic_search(
-    query: str = Query(..., min_length=1, max_length=1000, description="Natural language search query"),
+    query: str = Query(..., alias="q", min_length=1, max_length=1000, description="Natural language search query"),
     project_id: Optional[str] = Query(None, description="Filter by project UUID"),
-    top_k: int = Query(10, ge=1, le=50),
+    top_k: int = Query(10, alias="limit", ge=1, le=50),
     min_confidence: float = Query(0.3, ge=0.0, le=1.0),
     search_type: str = Query("all", description="capsules | chunks | all"),
     db: AsyncSession = Depends(get_db),

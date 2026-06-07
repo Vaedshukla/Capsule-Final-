@@ -98,7 +98,7 @@ class IngestionPipeline:
             # 6. Trigger memory capsule generation
             from app.compression.capsule_builder import CapsuleBuilder
             builder = CapsuleBuilder(self.db)
-            capsule, _ = await builder.build_from_conversation(str(conversation.id))
+            capsule, _ = await builder.build_from_conversation(str(conversation.id), use_llm=True)
             if capsule:
                 await self.embedding_service.embed_capsule(capsule.id)
                 log.info("capsule_built_and_embedded", capsule_id=str(capsule.id))
