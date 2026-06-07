@@ -147,3 +147,17 @@ Project Capsule integrates directly with the EVM-compatible **Monad Testnet** to
 1. **Saved Chats**: View captured chats, key decisions, and action items in a chronological MacOS-style minimal layout.
 2. **Memory Explorer**: Semantic hybrid retrieval to find previous technical choices.
 3. **Anchor to Monad**: Every conversation detail page features an **"Anchor to Monad"** button. Connect Metamask (or rely on the relayer) to sign and commit a cryptographic hash of the capsule to the Monad Testnet block registry!
+
+---
+
+## 🚀 Hosting & Deployment
+
+### Frontend (Vercel)
+
+The Next.js frontend is optimized for deployment on Vercel:
+
+1. Create a new project on [Vercel](https://vercel.com).
+2. Connect your GitHub repository (`Capsule-Final-`).
+3. Set the **Root Directory** setting to `frontend`.
+4. Vercel will auto-detect Next.js. Click **Deploy**.
+5. Add the environment variable `NEXT_PUBLIC_BACKEND_URL` pointing to your deployed backend URL.
